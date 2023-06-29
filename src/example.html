@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    #counter-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #counter-value {
+      font-size: 24px;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Counter App</h1>
+  <div id="counter-container">
+    <button id="decrement-btn">-</button>
+    <span id="counter-value">0</span>
+    <button id="increment-btn">+</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Agrega aquí tu código jQuery
+    $(document).ready(function() {
+      let counterValue = 0;
+
+      // Actualiza el valor del contador en la página
+      function updateCounter() {
+        $('#counter-value').text(counterValue);
+      }
+
+      // Incrementa el valor del contador al hacer clic en el botón de incremento
+      $('#increment-btn').click(function() {
+        counterValue++;
+        updateCounter();
+      });
+
+      // Decrementa el valor del contador al hacer clic en el botón de decremento
+      $('#decrement-btn').click(function() {
+        if (counterValue > 0) {
+          counterValue--;
+          updateCounter();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
